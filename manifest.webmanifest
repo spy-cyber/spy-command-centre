@@ -1,0 +1,18 @@
+{
+  "name": "SPY Command Centre",
+  "short_name": "SPY Centre",
+  "description": "Personal finance, career and productivity command centre",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f5fa",
+  "theme_color": "#101d3a",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
