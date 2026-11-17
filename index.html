@@ -3,46 +3,53 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#101d3a">
-<meta name="description" content="Your personal finance, career and productivity command centre.">
+<meta name="theme-color" content="#101a32">
+<meta name="description" content="SPY Command Centre 4.0 — personal finance, career, goals and productivity.">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
-<title>SPY Command Centre</title>
+<title>SPY Command Centre 4.0</title>
 <style>
-:root{--navy:#101d3a;--blue:#2458c6;--bg:#f3f5fa;--card:#fff;--ink:#172033;--muted:#69758b;--line:#e6eaf1;--green:#16834a;--red:#c13d48;--shadow:0 8px 24px #18294b0c}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding-bottom:calc(78px + env(safe-area-inset-bottom))}
-button,input,select{font:inherit}button{cursor:pointer}.shell{max-width:760px;margin:auto;padding:16px}.hero{background:linear-gradient(135deg,#101d3a,#203f7c);color:white;border-radius:22px;padding:20px;box-shadow:var(--shadow)}.eyebrow{font-size:11px;letter-spacing:.13em;color:#b9cdfc;font-weight:700}.hero h1{font-size:23px;margin:5px 0}.hero p{color:#d3def7;margin:0;font-size:13px}.heroStats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}.heroStats small{display:block;color:#b9cdfc}.heroStats strong{font-size:20px;display:block;margin-top:3px}
-.nav{position:fixed;z-index:5;bottom:0;left:0;right:0;background:#ffffffed;backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:8px max(8px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom));display:flex;justify-content:center;gap:4px}.nav button{border:0;background:transparent;color:var(--muted);padding:8px 5px;border-radius:12px;flex:1;max-width:100px;font-size:11px}.nav button b{display:block;font-size:18px;font-weight:500}.nav button.active{background:#eaf0ff;color:var(--blue);font-weight:700}
-main{padding-top:16px}.section{display:none}.section.active{display:block}.sectionTitle{font-size:19px;margin:4px 0 12px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.card{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:14px;box-shadow:var(--shadow);margin-bottom:11px}.metric small,.muted{color:var(--muted)}.metric strong{display:block;font-size:20px;margin-top:5px}.positive{color:var(--green)}.negative{color:var(--red)}.field{margin:10px 0}.field label{display:block;font-size:12px;color:var(--muted);font-weight:650;margin-bottom:5px}.field input,.field select{width:100%;border:1px solid #dce2ec;background:#fff;border-radius:11px;padding:11px 12px;color:var(--ink);outline-color:#7da0f5}.row{display:flex;gap:9px;align-items:center}.row>*{flex:1}.btn{border:0;background:var(--blue);color:white;padding:11px 14px;border-radius:12px;font-weight:700}.btn.secondary{background:#edf1f8;color:#26344f}.btn.danger{background:#fff0f0;color:var(--red)}.btn.full{width:100%;margin-top:6px}.btn:disabled{opacity:.45;cursor:not-allowed}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}.pill{border:1px solid var(--line);background:white;color:var(--muted);padding:7px 11px;border-radius:99px;font-size:12px}.pill.active{background:#eaf0ff;color:var(--blue);border-color:#cbd9ff}.item{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}.item:last-child{border:0}.item strong{display:block}.item small{color:var(--muted)}.tiny{font-size:11px;color:var(--muted)}.bar{height:8px;background:#e9edf4;border-radius:99px;overflow:hidden}.bar span{display:block;height:100%;background:#238553;border-radius:99px}.check{width:19px;height:19px;accent-color:var(--blue)}.empty{color:var(--muted);font-size:13px;padding:12px 0}.topline{display:flex;justify-content:space-between;align-items:center;gap:10px}.tag{font-size:11px;background:#eef2f8;padding:4px 8px;border-radius:99px;color:#526078}.tag.green{background:#e8f6ed;color:#167443}.tag.red{background:#fff0f0;color:#b52e3b}.install{display:none;margin-top:12px}.notice{background:#fff8e6;border:1px solid #f1dfaa;color:#70551a;border-radius:12px;padding:11px;font-size:12px;margin-top:12px}
-@media(min-width:600px){.shell{padding:24px}.hero{padding:25px}.hero h1{font-size:28px}}
+:root{--bg:#f3f5fa;--surface:#fff;--ink:#172033;--muted:#718096;--line:#e5eaf2;--navy:#101a32;--blue:#315bd6;--blue2:#eaf0ff;--green:#16834a;--greenbg:#e8f7ee;--red:#c13d48;--redbg:#fff0f1;--amber:#946200;--amberbg:#fff6df;--shadow:0 8px 24px #15284b0b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding-bottom:calc(82px + env(safe-area-inset-bottom))}
+button,input,select,textarea{font:inherit}button{cursor:pointer}.shell{max-width:820px;margin:auto;padding:14px}
+.hero{background:linear-gradient(135deg,#101a32,#24488e 72%,#3767c7);color:#fff;border-radius:23px;padding:20px;box-shadow:0 14px 32px #14264c24;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:190px;height:190px;border:1px solid #ffffff20;border-radius:50%;right:-75px;top:-85px;box-shadow:0 0 0 22px #ffffff09,0 0 0 45px #ffffff06}
+.eyebrow{font-size:10px;letter-spacing:.15em;color:#c4d4ff;font-weight:800}.hero h1{font-size:23px;line-height:1.15;margin:7px 0}.hero p{font-size:12px;color:#d9e3ff;margin:0}.heroStats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px;position:relative;z-index:1}.heroStat{background:#ffffff12;border:1px solid #ffffff1c;border-radius:14px;padding:11px}.heroStat small{display:block;color:#cbd8fa;font-size:11px}.heroStat strong{font-size:19px;display:block;margin-top:3px;overflow-wrap:anywhere}.heroMeta{display:flex;justify-content:space-between;align-items:center;margin-top:13px;color:#d5e0ff;font-size:11px}
+main{padding-top:17px}.section{display:none}.section.active{display:block}.sectionTitle{font-size:19px;margin:3px 0 12px}.sub{color:var(--muted);font-size:12px;margin:-6px 0 12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.card{background:var(--surface);border:1px solid var(--line);border-radius:17px;padding:14px;box-shadow:var(--shadow);margin-bottom:11px}.metric small,.muted{color:var(--muted)}.metric strong{display:block;font-size:20px;margin-top:4px;overflow-wrap:anywhere}.metric .caption{font-size:11px;color:var(--muted);margin-top:3px}.positive{color:var(--green)}.negative{color:var(--red)}.field{margin:10px 0}.field label{display:block;font-size:11px;color:var(--muted);font-weight:750;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;border:1px solid #dce3ed;background:#fff;border-radius:11px;padding:11px 12px;color:var(--ink);outline-color:#8da8ff}.field textarea{min-height:75px;resize:vertical}.row{display:flex;gap:9px;align-items:center}.row>*{flex:1;min-width:0}.btn{border:0;background:var(--blue);color:white;padding:11px 14px;border-radius:12px;font-weight:750}.btn.secondary{background:#edf1f8;color:#26344f}.btn.ghost{background:var(--blue2);color:var(--blue)}.btn.danger{background:var(--redbg);color:var(--red)}.btn.full{width:100%;margin-top:5px}.btn.small{padding:7px 10px;font-size:12px}.btn:disabled{opacity:.45}.topline{display:flex;justify-content:space-between;align-items:center;gap:10px}.tag{font-size:10px;background:#eef2f8;padding:4px 8px;border-radius:99px;color:#526078;white-space:nowrap}.tag.green{background:var(--greenbg);color:#167443}.tag.red{background:var(--redbg);color:#b52e3b}.tag.amber{background:var(--amberbg);color:var(--amber)}
+.item{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}.item:last-child{border:0}.itemMain{min-width:0;flex:1}.item strong{display:block;overflow-wrap:anywhere}.item small{color:var(--muted);font-size:11px}.tiny{font-size:11px;color:var(--muted)}.bar{height:8px;background:#e9edf4;border-radius:99px;overflow:hidden}.bar span{display:block;height:100%;background:linear-gradient(90deg,#315bd6,#38a27b);border-radius:99px}.empty{color:var(--muted);font-size:13px;padding:13px 0}.pill{border:1px solid var(--line);background:white;color:var(--muted);padding:7px 10px;border-radius:99px;font-size:11px}.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.pill.active{background:var(--blue2);color:var(--blue);border-color:#cbd9ff}.check{width:19px;height:19px;accent-color:var(--blue)}.notice{background:#fff8e6;border:1px solid #f1dfaa;color:#70551a;border-radius:12px;padding:11px;font-size:12px;margin:10px 0}.quick{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.quick button{text-align:left;display:flex;align-items:center;gap:9px}.quick .qicon{font-size:18px}.nav{position:fixed;z-index:10;bottom:0;left:0;right:0;background:#ffffffed;backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:7px max(7px,env(safe-area-inset-right)) calc(7px + env(safe-area-inset-bottom));display:flex;justify-content:center;gap:3px}.nav button{border:0;background:transparent;color:var(--muted);padding:7px 3px;border-radius:12px;flex:1;max-width:100px;font-size:10px}.nav button b{display:block;font-size:18px;font-weight:500;line-height:1.2}.nav button.active{background:var(--blue2);color:var(--blue);font-weight:800}.nav button span{display:block;margin-top:3px}.install{display:none}.dangerZone{border-color:#f1d5d8}.mutedLink{color:var(--blue);text-decoration:underline;cursor:pointer}.filterInput{max-width:145px;padding:7px 9px;border:1px solid var(--line);border-radius:10px}
+@media(min-width:620px){.shell{padding:23px}.hero{padding:25px}.hero h1{font-size:28px}.heroStats{max-width:420px}.nav{max-width:820px;margin:auto;left:50%;transform:translateX(-50%);border:1px solid var(--line);border-bottom:0;border-radius:18px 18px 0 0}}
 </style>
 </head>
 <body>
 <div class="shell">
 <header class="hero">
- <div class="eyebrow">PERSONAL MANAGEMENT SYSTEM · VERSION 3.0</div>
+ <div class="eyebrow">PERSONAL MANAGEMENT SYSTEM · VERSION 4.0</div>
  <h1>SPY COMMAND CENTRE</h1><p>Your life. Your numbers. Your progress.</p>
  <div class="heroStats">
-  <div><small>Available balance</small><strong id="heroBalance">₦0</strong></div>
-  <div><small>Outstanding debt</small><strong id="heroDebt">₦0</strong></div>
+  <div class="heroStat"><small>Available balance</small><strong id="heroBalance">₦0</strong></div>
+  <div class="heroStat"><small>Outstanding debt</small><strong id="heroDebt">₦0</strong></div>
  </div>
- <button id="installBtn" class="btn install" type="button">＋ Install app</button>
+ <div class="heroMeta"><span id="todayLabel">Your command centre</span><button id="installBtn" class="btn small install" type="button">＋ Install app</button></div>
 </header>
 <main>
 <section id="home" class="section active">
- <h2 class="sectionTitle">Overview</h2>
+ <h2 class="sectionTitle">Your overview</h2><p class="sub">A live snapshot of your money, work and momentum.</p>
  <div class="grid">
-  <div class="card metric"><small>Income recorded</small><strong id="mIncome">₦0</strong></div>
-  <div class="card metric"><small>Expenses recorded</small><strong id="mExpense">₦0</strong></div>
-  <div class="card metric"><small>Applications</small><strong id="mApps">0</strong></div>
-  <div class="card metric"><small>Tasks completed</small><strong id="mTasks">0/0</strong></div>
+  <div class="card metric"><small>Income recorded</small><strong id="mIncome">₦0</strong><div class="caption">All recorded time</div></div>
+  <div class="card metric"><small>Expenses recorded</small><strong id="mExpense">₦0</strong><div class="caption">All recorded time</div></div>
+  <div class="card metric"><small>Active applications</small><strong id="mApps">0</strong><div class="caption">Not yet closed</div></div>
+  <div class="card metric"><small>Task completion</small><strong id="mTasks">0/0</strong><div class="caption" id="taskPct">0% completed</div></div>
  </div>
- <div class="card"><div class="topline"><b>Today's productivity</b><b id="taskPct">0%</b></div><div class="bar" style="margin:10px 0"><span id="taskBar" style="width:0%"></span></div><div class="tiny">Tick off tasks in the Tasks section.</div></div>
- <div class="card"><div class="topline"><b>Recent transactions</b><button class="pill" data-go="finance">View all</button></div><div id="recentTx"></div></div>
- <div class="card"><b>Quick actions</b><div class="row" style="margin-top:10px"><button class="btn" data-go="finance">＋ Transaction</button><button class="btn secondary" data-go="career">＋ Application</button></div></div>
+ <div class="card"><div class="topline"><b>This month's money</b><b id="monthNet">₦0</b></div><div class="grid" style="margin-top:10px"><div><small class="muted">Income</small><strong id="monthIncome">₦0</strong></div><div><small class="muted">Expenses</small><strong id="monthExpense">₦0</strong></div></div></div>
+ <div class="card"><div class="topline"><b>Task momentum</b><b id="taskPct2">0%</b></div><div class="bar" style="margin:10px 0"><span id="taskBar" style="width:0%"></span></div><div class="tiny">Complete your priorities in the Tasks section.</div></div>
+ <div class="card"><div class="topline"><b>Upcoming follow-ups</b><span class="tag" id="followCount">0</span></div><div id="upcomingList"></div></div>
+ <div class="card"><div class="topline"><b>Recent transactions</b><button class="pill" data-go="money">View all</button></div><div id="recentTx"></div></div>
+ <div class="card"><b>Quick actions</b><div class="quick" style="margin-top:11px"><button class="btn" data-go="money"><span class="qicon">＋</span>Transaction</button><button class="btn secondary" data-go="career"><span class="qicon">▣</span>Application</button><button class="btn secondary" data-go="goals"><span class="qicon">◎</span>Savings goal</button><button class="btn secondary" data-go="tasks"><span class="qicon">☑</span>Daily task</button></div></div>
 </section>
-<section id="finance" class="section">
- <h2 class="sectionTitle">Finance manager</h2>
+
+<section id="money" class="section">
+ <h2 class="sectionTitle">Money manager</h2><p class="sub">Track cash flow and keep spending within your plan.</p>
  <div class="card">
   <div class="field"><label>Monthly baseline income (₦)</label><input id="salary" type="number" min="0" inputmode="numeric" placeholder="e.g. 100000"></div>
   <div class="grid"><div class="metric"><small>Total income</small><strong id="totalIncome">₦0</strong></div><div class="metric"><small>Total expenses</small><strong id="totalExpense">₦0</strong></div></div>
@@ -50,117 +57,151 @@ main{padding-top:16px}.section{display:none}.section.active{display:block}.secti
  </div>
  <div class="card"><b>Add transaction</b>
   <div class="field"><label>Type</label><select id="txType"><option>Expense</option><option>Income</option></select></div>
-  <div class="field"><label>Description</label><input id="txDesc" placeholder="e.g. Transport, freelance work"></div>
-  <div class="field"><label>Amount (₦)</label><input id="txAmount" type="number" min="1" inputmode="numeric" placeholder="Amount"></div>
+  <div class="field"><label>Description</label><input id="txDesc" placeholder="e.g. Transport, salary, freelance work"></div>
+  <div class="row"><div class="field"><label>Amount (₦)</label><input id="txAmount" type="number" min="1" inputmode="numeric" placeholder="Amount"></div><div class="field"><label>Category</label><select id="txCategory"><option>Other</option><option>Food</option><option>Transport</option><option>Housing</option><option>Utilities</option><option>Health</option><option>Family</option><option>Education</option><option>Work</option><option>Salary</option><option>Business</option><option>Giving</option><option>Entertainment</option><option>Savings</option></select></div></div>
+  <div class="field"><label>Date</label><input id="txDate" type="date"></div>
   <button class="btn full" id="addTx">Save transaction</button>
  </div>
- <div class="card"><div class="topline"><b>Transaction history</b><span class="tag" id="txCount">0 records</span></div><div id="txList"></div></div>
+ <div class="card"><div class="topline"><b>Monthly category budgets</b><span class="tag" id="budgetMonth"></span></div><div class="row"><div class="field"><label>Category</label><select id="budgetCategory"><option>Food</option><option>Transport</option><option>Housing</option><option>Utilities</option><option>Health</option><option>Family</option><option>Education</option><option>Work</option><option>Giving</option><option>Entertainment</option><option>Other</option></select></div><div class="field"><label>Monthly limit (₦)</label><input id="budgetAmount" type="number" min="1" inputmode="numeric" placeholder="e.g. 20000"></div></div><button class="btn secondary full" id="saveBudget">Set / update budget</button><div id="budgetList"></div></div>
+ <div class="card"><div class="topline"><b>Transaction history</b><span class="tag" id="txCount">0 records</span></div><div class="field"><label>Filter by month</label><input id="txMonthFilter" type="month"></div><div id="txList"></div></div>
 </section>
+
 <section id="debt" class="section">
- <h2 class="sectionTitle">Debt repayment</h2>
- <div class="card">
-  <div class="field"><label>Original debt amount (₦)</label><input id="debtOriginal" type="number" min="0" inputmode="numeric"></div>
-  <div class="metric"><small>Outstanding balance</small><strong id="debtOutstanding">₦0</strong></div>
-  <div class="bar" style="margin:12px 0"><span id="debtBar" style="width:0%"></span></div><div class="tiny" id="debtPaid">₦0 repaid</div>
- </div>
- <div class="card"><b>Record repayment</b><div class="field"><label>Amount (₦)</label><input id="repayAmount" type="number" min="1" inputmode="numeric" placeholder="Repayment amount"></div><button class="btn full" id="addRepay">Record repayment</button></div>
+ <h2 class="sectionTitle">Debt repayment</h2><p class="sub">Know what remains and measure every repayment.</p>
+ <div class="card"><div class="field"><label>Original debt amount (₦)</label><input id="debtOriginal" type="number" min="0" inputmode="numeric"></div><div class="metric"><small>Outstanding balance</small><strong id="debtOutstanding">₦0</strong></div><div class="bar" style="margin:12px 0"><span id="debtBar" style="width:0%"></span></div><div class="tiny" id="debtPaid">₦0 repaid</div></div>
+ <div class="card"><b>Record repayment</b><div class="field"><label>Amount (₦)</label><input id="repayAmount" type="number" min="1" inputmode="numeric" placeholder="Repayment amount"></div><div class="field"><label>Note (optional)</label><input id="repayNote" placeholder="e.g. November payment"></div><button class="btn full" id="addRepay">Record repayment</button></div>
  <div class="card"><b>Repayment history</b><div id="repayList"></div></div>
 </section>
+
 <section id="career" class="section">
- <h2 class="sectionTitle">Career pipeline</h2>
+ <h2 class="sectionTitle">Career pipeline</h2><p class="sub">Keep every opportunity, deadline and follow-up organised.</p>
  <div class="card"><b>Add opportunity</b>
   <div class="field"><label>Organisation</label><input id="org" placeholder="Organisation name"></div>
   <div class="field"><label>Role</label><input id="role" placeholder="Job title"></div>
   <div class="field"><label>Status</label><select id="appStatus"><option>Interested</option><option>Preparing</option><option>Applied</option><option>Shortlisted</option><option>Interview</option><option>Successful</option><option>Rejected</option></select></div>
-  <div class="field"><label>Deadline (optional)</label><input id="appDeadline" type="date"></div>
+  <div class="row"><div class="field"><label>Application deadline</label><input id="appDeadline" type="date"></div><div class="field"><label>Next follow-up</label><input id="appFollow" type="date"></div></div>
+  <div class="field"><label>Contact / email (optional)</label><input id="appContact" placeholder="Recruiter or contact details"></div>
+  <div class="field"><label>Notes (optional)</label><textarea id="appNotes" placeholder="Requirements, interview notes, next action..."></textarea></div>
   <button class="btn full" id="addApp">Add application</button>
  </div>
  <div class="card"><div class="topline"><b>Applications</b><span class="tag" id="appCount">0</span></div><div class="tabs" id="appFilters"><button class="pill active" data-filter="All">All</button><button class="pill" data-filter="Applied">Applied</button><button class="pill" data-filter="Interview">Interview</button><button class="pill" data-filter="Successful">Successful</button></div><div id="appList"></div></div>
 </section>
+
 <section id="tasks" class="section">
- <h2 class="sectionTitle">Daily productivity</h2>
+ <h2 class="sectionTitle">Tasks & priorities</h2><p class="sub">Turn your plans into clear daily actions.</p>
  <div class="card"><div class="topline"><b>Today's progress</b><b id="taskCount">0/0</b></div><div class="bar" style="margin:10px 0"><span id="taskBar2" style="width:0%"></span></div><div id="taskList"></div></div>
- <div class="card"><b>Add a task</b><div class="field"><label>Task description</label><input id="taskName" placeholder="What needs doing?"></div><button class="btn full" id="addTask">Add task</button><button class="btn secondary full" id="resetTasks">Reset today's checklist</button></div>
+ <div class="card"><b>Add a task</b><div class="field"><label>Task description</label><input id="taskName" placeholder="What needs doing?"></div><div class="row"><div class="field"><label>Priority</label><select id="taskPriority"><option>Normal</option><option>High</option><option>Urgent</option></select></div><div class="field"><label>Due date</label><input id="taskDue" type="date"></div></div><button class="btn full" id="addTask">Add task</button><button class="btn secondary full" id="resetTasks">Reset today's checklist</button></div>
 </section>
+
+<section id="goals" class="section">
+ <h2 class="sectionTitle">Savings & goals</h2><p class="sub">Give your money a purpose and track your progress.</p>
+ <div class="card"><b>Create a savings goal</b><div class="field"><label>Goal name</label><input id="goalName" placeholder="e.g. Emergency fund, laptop"></div><div class="field"><label>Target amount (₦)</label><input id="goalTarget" type="number" min="1" inputmode="numeric" placeholder="Target amount"></div><button class="btn full" id="addGoal">Create goal</button></div>
+ <div id="goalList"></div>
+</section>
+
 <section id="skills" class="section">
- <h2 class="sectionTitle">Learning & development</h2>
+ <h2 class="sectionTitle">Learning & development</h2><p class="sub">Measure your progress in skills that move your career forward.</p>
  <div class="card"><b>Your learning goals</b><div id="skillList"></div></div>
- <div class="card"><b>Add a skill</b><div class="field"><label>Skill name</label><input id="skillName" placeholder="e.g. KoboToolbox"></div><button class="btn full" id="addSkill">Add learning goal</button></div>
+ <div class="card"><b>Add a learning goal</b><div class="field"><label>Skill or course</label><input id="skillName" placeholder="e.g. Advanced Excel"></div><button class="btn full" id="addSkill">Add learning goal</button></div>
 </section>
+
 <section id="reports" class="section">
- <h2 class="sectionTitle">Reports & backup</h2>
- <div class="card"><b>Financial summary</b><div id="reportFinance"></div></div>
+ <h2 class="sectionTitle">Reports & more</h2><p class="sub">Review your progress and open the rest of your tools.</p>
+ <div class="card"><b>More tools</b><div class="quick" style="margin-top:11px"><button class="btn secondary" data-go="debt">↘ Debt repayment</button><button class="btn secondary" data-go="skills">✦ Learning goals</button><button class="btn secondary" data-go="settings">⚙ Data & settings</button></div></div>
+ <div class="card"><div class="topline"><b>Monthly report</b><input id="reportMonth" class="filterInput" type="month"></div><div class="grid" style="margin-top:12px"><div class="metric"><small>Income</small><strong id="rIncome">₦0</strong></div><div class="metric"><small>Expenses</small><strong id="rExpense">₦0</strong></div><div class="metric"><small>Net cash flow</small><strong id="rNet">₦0</strong></div><div class="metric"><small>Transactions</small><strong id="rCount">0</strong></div></div></div>
+ <div class="card"><b>Spending by category</b><div id="reportCategories"></div></div>
  <div class="card"><b>Career pipeline</b><div id="reportCareer"></div></div>
- <div class="card"><b>Backup your data</b><p class="muted" style="font-size:13px">Export a backup file regularly. Your information is stored on this device, not in a cloud account.</p><button class="btn full" id="exportData">Download data backup</button><div class="field"><label>Restore from backup file</label><input id="importFile" type="file" accept="application/json"></div><button class="btn secondary full" id="exportCsv">Download transactions CSV</button></div>
- <div class="card"><b>Data management</b><p class="muted" style="font-size:13px">Reset removes all locally saved app data from this browser. Export a backup first.</p><button class="btn danger full" id="clearData">Delete all app data</button></div>
+ <div class="card"><b>Goal progress</b><div id="reportGoals"></div></div>
 </section>
-<div class="notice">Privacy note: this app stores your entries locally in this browser. Anyone with access to your unlocked phone/browser profile may be able to see them. Do not enter passwords, bank login details or highly sensitive information.</div>
+
+<section id="settings" class="section">
+ <h2 class="sectionTitle">Settings & data safety</h2><p class="sub">Your records are stored in this browser on this device.</p>
+ <div class="card"><b>Backup & restore</b><p class="tiny">Download a backup regularly, especially before changing phones or browsers.</p><button class="btn full" id="exportData">Download full backup (JSON)</button><div class="field"><label>Restore from a SPY backup file</label><input id="importFile" type="file" accept="application/json,.json"></div><button class="btn secondary full" id="exportCsv">Export transactions (CSV)</button></div>
+ <div class="card"><b>App information</b><div class="item"><span>Version</span><b>4.0</b></div><div class="item"><span>Storage</span><b>On this device</b></div><div class="item"><span>Offline support</span><b>Enabled after first load</b></div><div class="notice">This app does not sync to the cloud or encrypt your records. Do not store passwords, PINs or highly sensitive information. Keep a backup in a safe place.</div></div>
+ <div class="card dangerZone"><b>Danger zone</b><p class="tiny">This permanently clears the data stored by this app on this device. Export a backup first.</p><button class="btn danger full" id="clearData">Clear all app data</button></div>
+</section>
 </main>
 </div>
 <nav class="nav" aria-label="Main navigation">
-<button class="active" data-page="home"><b>⌂</b>Home</button><button data-page="finance"><b>₦</b>Money</button><button data-page="debt"><b>↘</b>Debt</button><button data-page="career"><b>▣</b>Career</button><button data-page="tasks"><b>☑</b>Tasks</button><button data-page="skills"><b>✦</b>Skills</button><button data-page="reports"><b>▤</b>Reports</button>
+<button class="active" data-page="home"><b>⌂</b><span>Home</span></button>
+<button data-page="money"><b>₦</b><span>Money</span></button>
+<button data-page="career"><b>▣</b><span>Career</span></button>
+<button data-page="tasks"><b>☑</b><span>Tasks</span></button>
+<button data-page="goals"><b>◎</b><span>Goals</span></button>
+<button data-page="reports"><b>▤</b><span>More</span></button>
 </nav>
 <script>
-const KEY='spy-command-centre-v3';
-const defaults={salary:100000,transactions:[],debtOriginal:250000,repayments:[],applications:[],tasks:[{id:1,name:'Morning exercise',done:false},{id:2,name:'Excel learning',done:false},{id:3,name:'Music production',done:false},{id:4,name:'Career development',done:false}],skills:[{id:1,name:'Microsoft Excel',progress:0},{id:2,name:'Monitoring & Evaluation',progress:0},{id:3,name:'Data Analysis',progress:0}]};
+'use strict';
+const KEY='spy-command-centre-v4', OLD_KEY='spy-command-centre-v3';
+const today=new Date(), isoToday=localDate(today), monthNow=isoToday.slice(0,7);
+const defaults={salary:100000,transactions:[],debtOriginal:250000,repayments:[],applications:[],tasks:[{id:1,name:'Morning exercise',done:false,priority:'High'},{id:2,name:'Excel learning',done:false,priority:'Normal'},{id:3,name:'Music production',done:false,priority:'Normal'},{id:4,name:'Career development',done:false,priority:'High'}],skills:[{id:1,name:'Microsoft Excel',progress:0},{id:2,name:'Monitoring & Evaluation',progress:0},{id:3,name:'Data Analysis',progress:0}],budgets:{},goals:[]};
+function localDate(d){let x=new Date(d.getTime()-d.getTimezoneOffset()*60000);return x.toISOString().slice(0,10)}
+function clone(x){return JSON.parse(JSON.stringify(x))}
+function load(){try{let raw=localStorage.getItem(KEY);if(!raw)raw=localStorage.getItem(OLD_KEY);let parsed=raw?JSON.parse(raw):{};let merged={...clone(defaults),...parsed};merged.budgets=merged.budgets||{};merged.goals=merged.goals||[];merged.transactions=(merged.transactions||[]).map(t=>({...t,category:t.category||guessCategory(t.desc,t.type)}));merged.applications=(merged.applications||[]).map(a=>({...a,followUp:a.followUp||'',contact:a.contact||'',notes:a.notes||''}));merged.tasks=(merged.tasks||[]).map(t=>({...t,priority:t.priority||'Normal',dueDate:t.dueDate||''}));return merged}catch(e){return clone(defaults)}}
 let data=load();
-function load(){try{return {...structuredClone(defaults),...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch{return structuredClone(defaults)}}
-function save(){localStorage.setItem(KEY,JSON.stringify(data));render()}
-function num(v){return Math.max(0,Number(v)||0)}
-function money(v){return '₦'+Math.round(v).toLocaleString('en-NG')}
-function sum(a){return a.reduce((s,x)=>s+x.amount,0)}
-function totals(){let income=num(data.salary)+sum(data.transactions.filter(x=>x.type==='Income')),expense=sum(data.transactions.filter(x=>x.type==='Expense'));return {income,expense,balance:income-expense}}
-function debtLeft(){return Math.max(0,num(data.debtOriginal)-sum(data.repayments))}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(data));}catch(e){alert('Storage is full or unavailable. Download a backup and free some browser storage.')}render()}
 function el(id){return document.getElementById(id)}
-function safe(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function nav(page){document.querySelectorAll('.section').forEach(x=>x.classList.toggle('active',x.id===page));document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.page===page));window.scrollTo(0,0)}
+function num(v){return Math.max(0,Number(v)||0)}
+function sum(a){return a.reduce((n,x)=>n+num(x.amount),0)}
+function money(n){return new Intl.NumberFormat('en-NG',{style:'currency',currency:'NGN',maximumFractionDigits:0}).format(num(n))}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function dateText(s){if(!s)return '';let d=/^\d{4}-\d{2}-\d{2}$/.test(String(s))?new Date(s+'T00:00:00'):new Date(s);return isNaN(d)?s:d.toLocaleDateString('en-NG',{day:'numeric',month:'short',year:'numeric'})}
+function monthOf(s){return String(s||'').slice(0,7)}
+function guessCategory(desc,type){if(type==='Income')return 'Salary';let s=String(desc||'').toLowerCase();for(let [k,words] of Object.entries({Food:['food','meal','market','bread'],Transport:['transport','fuel','bike','taxi','bus'],Housing:['rent','house'],Utilities:['light','electric','water','data','internet'],Health:['drug','hospital','health'],Education:['school','course','lesson'],Family:['family','home support']})){if(words.some(w=>s.includes(w)))return k}return 'Other'}
+function totals(list=data.transactions){let income=sum(list.filter(x=>x.type==='Income'))+(list===data.transactions?num(data.salary):0),expense=sum(list.filter(x=>x.type==='Expense'));return {income,expense,balance:income-expense}}
+function debtLeft(){return Math.max(0,num(data.debtOriginal)-sum(data.repayments))}
+function nav(page){document.querySelectorAll('.section').forEach(x=>x.classList.toggle('active',x.id===page));document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.page===page||((page==='skills'||page==='settings'||page==='debt')&&x.dataset.page==='reports')));window.scrollTo(0,0);if(page==='reports')renderReports()}
 document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>nav(b.dataset.page)));
 document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>nav(b.dataset.go)));
+el('todayLabel').textContent=today.toLocaleDateString('en-NG',{weekday:'long',day:'numeric',month:'long'});
+el('txDate').value=isoToday;el('txMonthFilter').value=monthNow;el('reportMonth').value=monthNow;
 el('salary').addEventListener('change',e=>{data.salary=num(e.target.value);save()});
 el('debtOriginal').addEventListener('change',e=>{data.debtOriginal=num(e.target.value);save()});
-el('addTx').onclick=()=>{let desc=el('txDesc').value.trim(),amount=num(el('txAmount').value);if(!desc||!amount)return alert('Enter a description and an amount.');data.transactions.unshift({id:Date.now(),desc,amount,type:el('txType').value,date:new Date().toISOString()});el('txDesc').value='';el('txAmount').value='';save()};
-el('addRepay').onclick=()=>{let amount=num(el('repayAmount').value);if(!amount||amount>debtLeft())return alert('Enter a valid repayment not exceeding the outstanding balance.');data.repayments.unshift({id:Date.now(),amount,date:new Date().toISOString()});el('repayAmount').value='';save()};
-el('addApp').onclick=()=>{let org=el('org').value.trim(),role=el('role').value.trim();if(!org||!role)return alert('Enter the organisation and role.');data.applications.unshift({id:Date.now(),org,role,status:el('appStatus').value,deadline:el('appDeadline').value});el('org').value='';el('role').value='';el('appDeadline').value='';save()};
-el('addTask').onclick=()=>{let name=el('taskName').value.trim();if(!name)return;data.tasks.push({id:Date.now(),name,done:false});el('taskName').value='';save()};
-el('resetTasks').onclick=()=>{if(confirm('Reset all task checkmarks for a new day?')){data.tasks=data.tasks.map(t=>({...t,done:false}));save()}};
-el('addSkill').onclick=()=>{let name=el('skillName').value.trim();if(!name)return;if(data.skills.some(s=>s.name.toLowerCase()===name.toLowerCase()))return alert('That skill is already on your list.');data.skills.push({id:Date.now(),name,progress:0});el('skillName').value='';save()};
+el('addTx').onclick=()=>{let desc=el('txDesc').value.trim(),amount=num(el('txAmount').value);if(!desc||!amount)return alert('Enter a description and a valid amount.');data.transactions.unshift({id:Date.now(),desc,amount,type:el('txType').value,category:el('txCategory').value,date:el('txDate').value||isoToday});el('txDesc').value='';el('txAmount').value='';save()};
+el('txMonthFilter').onchange=renderTransactions;
+el('saveBudget').onclick=()=>{let cat=el('budgetCategory').value,amt=num(el('budgetAmount').value);if(!amt)return alert('Enter a valid monthly budget.');data.budgets[cat]=amt;el('budgetAmount').value='';save()};
+el('addRepay').onclick=()=>{let amount=num(el('repayAmount').value);if(!amount||amount>debtLeft())return alert('Enter a valid repayment not exceeding the outstanding balance.');data.repayments.unshift({id:Date.now(),amount,note:el('repayNote').value.trim(),date:isoToday});el('repayAmount').value='';el('repayNote').value='';save()};
+el('addApp').onclick=()=>{let org=el('org').value.trim(),role=el('role').value.trim();if(!org||!role)return alert('Enter the organisation and role.');data.applications.unshift({id:Date.now(),org,role,status:el('appStatus').value,deadline:el('appDeadline').value,followUp:el('appFollow').value,contact:el('appContact').value.trim(),notes:el('appNotes').value.trim()});['org','role','appDeadline','appFollow','appContact','appNotes'].forEach(id=>el(id).value='');save()};
 let appFilter='All';
 el('appFilters').addEventListener('click',e=>{let b=e.target.closest('[data-filter]');if(!b)return;appFilter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x===b));renderCareer()});
-function renderCareer(){let list=data.applications.filter(a=>appFilter==='All'||a.status===appFilter);el('appCount').textContent=data.applications.length;el('appList').innerHTML=list.length?list.map(a=>`<div class="item"><div style="min-width:0"><strong>${safe(a.org)}</strong><small>${safe(a.role)}${a.deadline?' · Due '+safe(a.deadline):''}</small><div style="margin-top:6px"><select aria-label="Application status" data-appstatus="${a.id}">${['Interested','Preparing','Applied','Shortlisted','Interview','Successful','Rejected'].map(s=>`<option ${s===a.status?'selected':''}>${s}</option>`).join('')}</select></div></div><button class="pill" data-delapp="${a.id}">Remove</button></div>`).join(''):'<div class="empty">No applications in this view yet.</div>'}
-el('appList').addEventListener('change',e=>{let id=Number(e.target.dataset.appstatus);if(!id)return;let a=data.applications.find(x=>x.id===id);if(a){a.status=e.target.value;save()}});
-el('appList').addEventListener('click',e=>{let id=Number(e.target.dataset.delapp);if(!id)return;data.applications=data.applications.filter(x=>x.id!==id);save()});
+el('appList').addEventListener('change',e=>{let status=e.target.dataset.appstatus,id=Number(e.target.dataset.appid);if(status&&id){let a=data.applications.find(x=>x.id===id);if(a){a.status=status;save()}}});
+el('appList').addEventListener('click',e=>{let id=Number(e.target.dataset.delapp);if(id&&confirm('Remove this application?')){data.applications=data.applications.filter(x=>x.id!==id);save()}});
+el('addTask').onclick=()=>{let name=el('taskName').value.trim();if(!name)return;data.tasks.push({id:Date.now(),name,done:false,priority:el('taskPriority').value,dueDate:el('taskDue').value});el('taskName').value='';el('taskDue').value='';save()};
+el('resetTasks').onclick=()=>{if(confirm('Reset all task checkmarks for a new day?')){data.tasks=data.tasks.map(t=>({...t,done:false}));save()}};
 el('taskList').addEventListener('change',e=>{let id=Number(e.target.dataset.task);if(!id)return;let t=data.tasks.find(x=>x.id===id);if(t){t.done=e.target.checked;save()}});
-el('taskList').addEventListener('click',e=>{let id=Number(e.target.dataset.deltask);if(!id)return;data.tasks=data.tasks.filter(x=>x.id!==id);save()});
-el('skillList').addEventListener('input',e=>{let id=Number(e.target.dataset.skill);if(!id)return;let s=data.skills.find(x=>x.id===id);if(s){s.progress=num(e.target.value);el('skillPct'+id).textContent=s.progress+'%';}});
+el('taskList').addEventListener('click',e=>{let id=Number(e.target.dataset.deltask);if(id&&confirm('Remove this task?')){data.tasks=data.tasks.filter(x=>x.id!==id);save()}});
+el('addGoal').onclick=()=>{let name=el('goalName').value.trim(),target=num(el('goalTarget').value);if(!name||!target)return alert('Enter a goal name and target amount.');data.goals.push({id:Date.now(),name,target,saved:0});el('goalName').value='';el('goalTarget').value='';save()};
+el('goalList').addEventListener('click',e=>{let id=Number(e.target.dataset.contribute);if(id){let g=data.goals.find(x=>x.id===id);let amount=num(prompt('How much are you adding to '+g.name+'? (₦)'));if(amount){g.saved=Math.min(g.target,num(g.saved)+amount);save();return}}let del=Number(e.target.dataset.delgoal);if(del&&confirm('Delete this savings goal?')){data.goals=data.goals.filter(x=>x.id!==del);save()}});
+el('addSkill').onclick=()=>{let name=el('skillName').value.trim();if(!name)return;if(data.skills.some(s=>s.name.toLowerCase()===name.toLowerCase()))return alert('That skill is already on your list.');data.skills.push({id:Date.now(),name,progress:0});el('skillName').value='';save()};
+el('skillList').addEventListener('input',e=>{let id=Number(e.target.dataset.skill);if(!id)return;let s=data.skills.find(x=>x.id===id);if(s){s.progress=num(e.target.value);el('skillPct'+id).textContent=s.progress+'%'}});
 el('skillList').addEventListener('change',()=>save());
-el('skillList').addEventListener('click',e=>{let id=Number(e.target.dataset.delskill);if(!id)return;data.skills=data.skills.filter(x=>x.id!==id);save()});
-function render(){
- let t=totals(),paid=sum(data.repayments),left=debtLeft(),done=data.tasks.filter(x=>x.done).length,pct=data.tasks.length?Math.round(done/data.tasks.length*100):0;
- el('salary').value=data.salary;el('debtOriginal').value=data.debtOriginal;
- el('heroBalance').textContent=money(t.balance);el('heroDebt').textContent=money(left);
- el('mIncome').textContent=money(t.income);el('mExpense').textContent=money(t.expense);el('mApps').textContent=data.applications.length;el('mTasks').textContent=done+'/'+data.tasks.length;
- el('taskPct').textContent=pct+'%';el('taskBar').style.width=pct+'%';el('taskCount').textContent=done+'/'+data.tasks.length;el('taskBar2').style.width=pct+'%';
- el('totalIncome').textContent=money(t.income);el('totalExpense').textContent=money(t.expense);el('netBalance').textContent=money(t.balance);
- el('debtOutstanding').textContent=money(left);el('debtPaid').textContent=money(paid)+' repaid';el('debtBar').style.width=(num(data.debtOriginal)?Math.min(100,paid/num(data.debtOriginal)*100):0)+'%';
- el('txCount').textContent=data.transactions.length+' records';
- el('txList').innerHTML=data.transactions.length?data.transactions.map(x=>`<div class="item"><div><strong>${safe(x.desc)}</strong><small>${new Date(x.date).toLocaleDateString()}</small></div><b class="${x.type==='Income'?'positive':'negative'}">${x.type==='Income'?'+':'−'}${money(x.amount)}</b><button class="pill" data-deltx="${x.id}">×</button></div>`).join(''):'<div class="empty">No transactions recorded.</div>';
- el('recentTx').innerHTML=data.transactions.slice(0,4).map(x=>`<div class="item"><div><strong>${safe(x.desc)}</strong><small>${x.type}</small></div><b class="${x.type==='Income'?'positive':'negative'}">${x.type==='Income'?'+':'−'}${money(x.amount)}</b></div>`).join('')||'<div class="empty">No transactions yet.</div>';
- el('repayList').innerHTML=data.repayments.map(x=>`<div class="item"><div><strong>Debt repayment</strong><small>${new Date(x.date).toLocaleDateString()}</small></div><b class="positive">−${money(x.amount)}</b></div>`).join('')||'<div class="empty">No repayments yet.</div>';
- el('taskList').innerHTML=data.tasks.map(x=>`<div class="item"><label style="display:flex;align-items:center;gap:10px;flex:1"><input class="check" type="checkbox" data-task="${x.id}" ${x.done?'checked':''}><span style="${x.done?'text-decoration:line-through;color:#7b8495':''}">${safe(x.name)}</span></label><button class="pill" data-deltask="${x.id}">Remove</button></div>`).join('')||'<div class="empty">No tasks. Add one below.</div>';
- el('skillList').innerHTML=data.skills.map(x=>`<div class="item" style="display:block"><div class="topline"><strong>${safe(x.name)}</strong><span id="skillPct${x.id}">${x.progress}%</span></div><input style="width:100%;margin:12px 0" type="range" min="0" max="100" step="5" value="${x.progress}" data-skill="${x.id}"><button class="pill" data-delskill="${x.id}">Remove</button></div>`).join('')||'<div class="empty">No skills added.</div>';
- renderCareer();
- el('reportFinance').innerHTML=[['Income',money(t.income)],['Expenses',money(t.expense)],['Net balance',money(t.balance)],['Debt outstanding',money(left)]].map(x=>`<div class="item"><span>${x[0]}</span><b>${x[1]}</b></div>`).join('');
- el('reportCareer').innerHTML=['Interested','Preparing','Applied','Shortlisted','Interview','Successful','Rejected'].map(s=>`<div class="item"><span>${s}</span><b>${data.applications.filter(a=>a.status===s).length}</b></div>`).join('');
-}
-el('txList').addEventListener('click',e=>{let id=Number(e.target.dataset.deltx);if(!id)return;data.transactions=data.transactions.filter(x=>x.id!==id);save()});
-el('exportData').onclick=()=>download('spy-command-centre-backup.json',JSON.stringify(data,null,2),'application/json');
-el('exportCsv').onclick=()=>{let rows=[['Date','Type','Description','Amount'],...data.transactions.map(x=>[new Date(x.date).toISOString(),x.type,x.desc,x.amount])];download('spy-transactions.csv',rows.map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\n'),'text/csv')};
-function download(name,content,type){let a=document.createElement('a'),url=URL.createObjectURL(new Blob([content],{type}));a.href=url;a.download=name;a.click();URL.revokeObjectURL(url)}
-el('importFile').onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let imported=JSON.parse(await f.text());if(!imported||!Array.isArray(imported.transactions)||!Array.isArray(imported.tasks))throw Error();data={...structuredClone(defaults),...imported};save();alert('Backup restored successfully.')}catch{alert('That file is not a valid SPY Command Centre backup.')}e.target.value=''};
-el('clearData').onclick=()=>{if(confirm('Permanently delete all SPY Command Centre data stored in this browser?')){data=structuredClone(defaults);save()}};
+el('skillList').addEventListener('click',e=>{let id=Number(e.target.dataset.delskill);if(id&&confirm('Remove this learning goal?')){data.skills=data.skills.filter(x=>x.id!==id);save()}});
+function renderTransactions(){let month=el('txMonthFilter').value||monthNow,list=data.transactions.filter(x=>monthOf(x.date)===month);el('txCount').textContent=list.length+' records · '+month;el('txList').innerHTML=list.length?list.map(x=>`<div class="item"><div class="itemMain"><strong>${esc(x.desc)}</strong><small>${esc(x.category||'Other')} · ${dateText(x.date)}</small></div><b class="${x.type==='Income'?'positive':'negative'}">${x.type==='Income'?'+':'−'}${money(x.amount)}</b><button class="pill" data-deltx="${x.id}">×</button></div>`).join(''):'<div class="empty">No transactions for this month.</div>'}
+el('txList').addEventListener('click',e=>{let id=Number(e.target.dataset.deltx);if(id&&confirm('Delete this transaction?')){data.transactions=data.transactions.filter(x=>x.id!==id);save()}});
+function renderCareer(){let list=data.applications.filter(a=>appFilter==='All'||a.status===appFilter);el('appCount').textContent=data.applications.length;el('appList').innerHTML=list.length?list.map(a=>`<div class="item"><div class="itemMain"><div class="topline"><strong>${esc(a.org)}</strong><span class="tag ${a.status==='Successful'?'green':a.status==='Rejected'?'red':a.status==='Interview'?'amber':''}">${esc(a.status)}</span></div><small>${esc(a.role)}${a.deadline?' · Deadline '+dateText(a.deadline):''}${a.followUp?' · Follow up '+dateText(a.followUp):''}</small>${a.contact?`<div class="tiny">Contact: ${esc(a.contact)}</div>`:''}${a.notes?`<div class="tiny">${esc(a.notes)}</div>`:''}<div class="field" style="margin:7px 0 0"><label>Update status</label><select data-appstatus="1" data-appid="${a.id}">${['Interested','Preparing','Applied','Shortlisted','Interview','Successful','Rejected'].map(s=>`<option ${s===a.status?'selected':''}>${s}</option>`).join('')}</select></div></div><button class="pill" data-delapp="${a.id}">Remove</button></div>`).join(''):'<div class="empty">No applications in this view yet.</div>'}
+function renderBudgets(){let spent={};data.transactions.filter(x=>x.type==='Expense'&&monthOf(x.date)===monthNow).forEach(x=>{let c=x.category||'Other';spent[c]=(spent[c]||0)+num(x.amount)});let cats=Object.keys(data.budgets);el('budgetMonth').textContent=monthNow;el('budgetList').innerHTML=cats.length?cats.map(c=>{let limit=num(data.budgets[c]),used=spent[c]||0,p=limit?Math.min(100,used/limit*100):0;return `<div class="item" style="display:block"><div class="topline"><b>${esc(c)}</b><small>${money(used)} / ${money(limit)}</small></div><div class="bar" style="margin:8px 0"><span style="width:${p}%;background:${used>limit?'#c13d48':''}"></span></div><div class="topline"><small>${Math.round(p)}% used</small><button class="pill" data-delbudget="${esc(c)}">Remove</button></div></div>`}).join(''):'<div class="empty">Set a monthly limit for categories you want to control.</div>'}
+el('budgetList').addEventListener('click',e=>{let c=e.target.dataset.delbudget;if(c&&confirm('Remove this budget?')){delete data.budgets[c];save()}});
+function renderGoals(){el('goalList').innerHTML=data.goals.length?data.goals.map(g=>{let p=Math.min(100,Math.round(num(g.saved)/Math.max(1,num(g.target))*100));return `<div class="card"><div class="topline"><b>${esc(g.name)}</b><span class="tag ${p===100?'green':''}">${p}%</span></div><div class="bar" style="margin:11px 0"><span style="width:${p}%"></span></div><div class="topline"><small>${money(g.saved)} saved of ${money(g.target)}</small><small>${money(Math.max(0,g.target-g.saved))} to go</small></div><div class="row" style="margin-top:11px"><button class="btn small" data-contribute="${g.id}">＋ Add savings</button><button class="pill" data-delgoal="${g.id}">Delete</button></div></div>`}).join(''):'<div class="card empty">No savings goals yet. Create your first goal above.</div>'}
+function renderReports(){let month=el('reportMonth').value||monthNow,tx=data.transactions.filter(x=>monthOf(x.date)===month),t=totals(tx);el('rIncome').textContent=money(t.income);el('rExpense').textContent=money(t.expense);el('rNet').textContent=money(t.balance);el('rNet').className=t.balance>=0?'positive':'negative';el('rCount').textContent=tx.length;let cats={};tx.filter(x=>x.type==='Expense').forEach(x=>{let c=x.category||'Other';cats[c]=(cats[c]||0)+num(x.amount)});let sorted=Object.entries(cats).sort((a,b)=>b[1]-a[1]);el('reportCategories').innerHTML=sorted.length?sorted.map(([c,v])=>`<div class="item"><span>${esc(c)}</span><b>${money(v)}</b></div>`).join(''):'<div class="empty">No expenses recorded for this month.</div>';el('reportCareer').innerHTML=['Interested','Preparing','Applied','Shortlisted','Interview','Successful','Rejected'].map(s=>`<div class="item"><span>${s}</span><b>${data.applications.filter(a=>a.status===s).length}</b></div>`).join('');el('reportGoals').innerHTML=data.goals.length?data.goals.map(g=>`<div class="item"><span>${esc(g.name)}</span><b>${Math.min(100,Math.round(g.saved/g.target*100))}%</b></div>`).join(''):'<div class="empty">Create a savings goal to see progress here.</div>'}
+el('reportMonth').onchange=renderReports;
+function render(){let t=totals(),paid=sum(data.repayments),left=debtLeft(),done=data.tasks.filter(x=>x.done).length,pct=data.tasks.length?Math.round(done/data.tasks.length*100):0,mtx=data.transactions.filter(x=>monthOf(x.date)===monthNow),mt=totals(mtx);el('salary').value=data.salary;el('debtOriginal').value=data.debtOriginal;
+el('heroBalance').textContent=money(t.balance);el('heroDebt').textContent=money(left);el('mIncome').textContent=money(t.income);el('mExpense').textContent=money(t.expense);el('mApps').textContent=data.applications.filter(a=>!['Successful','Rejected'].includes(a.status)).length;el('mTasks').textContent=done+'/'+data.tasks.length;el('taskPct').textContent=pct+'% completed';el('taskPct2').textContent=pct+'%';el('taskBar').style.width=pct+'%';el('taskCount').textContent=done+'/'+data.tasks.length;el('taskBar2').style.width=pct+'%';
+el('monthNet').textContent=money(mt.balance);el('monthIncome').textContent=money(mt.income);el('monthExpense').textContent=money(mt.expense);el('totalIncome').textContent=money(t.income);el('totalExpense').textContent=money(t.expense);el('netBalance').textContent=money(t.balance);
+el('debtOutstanding').textContent=money(left);el('debtPaid').textContent=money(paid)+' repaid';el('debtBar').style.width=(num(data.debtOriginal)?Math.min(100,paid/num(data.debtOriginal)*100):0)+'%';
+el('repayList').innerHTML=data.repayments.map(x=>`<div class="item"><div class="itemMain"><strong>Debt repayment</strong><small>${dateText(x.date)}${x.note?' · '+esc(x.note):''}</small></div><b class="positive">−${money(x.amount)}</b></div>`).join('')||'<div class="empty">No repayments yet.</div>';
+el('taskList').innerHTML=data.tasks.map(x=>`<div class="item"><label class="itemMain" style="display:flex;align-items:center;gap:10px"><input class="check" type="checkbox" data-task="${x.id}" ${x.done?'checked':''}><span><strong style="${x.done?'text-decoration:line-through;color:#8993a3':''}">${esc(x.name)}</strong><small>${esc(x.priority||'Normal')}${x.dueDate?' · Due '+dateText(x.dueDate):''}</small></span></label><button class="pill" data-deltask="${x.id}">Remove</button></div>`).join('')||'<div class="empty">No tasks. Add one below.</div>';
+el('skillList').innerHTML=data.skills.map(x=>`<div class="item" style="display:block"><div class="topline"><strong>${esc(x.name)}</strong><span id="skillPct${x.id}">${x.progress}%</span></div><input style="width:100%;margin:12px 0" type="range" min="0" max="100" step="5" value="${x.progress}" data-skill="${x.id}"><button class="pill" data-delskill="${x.id}">Remove</button></div>`).join('')||'<div class="empty">No learning goals added.</div>';
+el('recentTx').innerHTML=data.transactions.slice(0,4).map(x=>`<div class="item"><div class="itemMain"><strong>${esc(x.desc)}</strong><small>${esc(x.category||'Other')} · ${esc(x.type)}</small></div><b class="${x.type==='Income'?'positive':'negative'}">${x.type==='Income'?'+':'−'}${money(x.amount)}</b></div>`).join('')||'<div class="empty">No transactions yet.</div>';
+let upcoming=data.applications.filter(a=>a.followUp&&!['Successful','Rejected'].includes(a.status)).sort((a,b)=>a.followUp.localeCompare(b.followUp)).slice(0,4);el('followCount').textContent=upcoming.length;el('upcomingList').innerHTML=upcoming.length?upcoming.map(a=>`<div class="item"><div class="itemMain"><strong>${esc(a.org)} · ${esc(a.role)}</strong><small>Follow up: ${dateText(a.followUp)}</small></div><span class="tag ${a.followUp<isoToday?'red':'amber'}">${a.followUp<isoToday?'Overdue':'Upcoming'}</span></div>`).join(''):'<div class="empty">No follow-ups scheduled. Add one to a career opportunity.</div>';
+renderCareer();renderTransactions();renderBudgets();renderGoals();renderReports()}
+el('exportData').onclick=()=>download('spy-command-centre-backup-v4.json',JSON.stringify(data,null,2),'application/json');
+el('exportCsv').onclick=()=>{let rows=[['Date','Type','Category','Description','Amount'],...data.transactions.map(x=>[x.date,x.type,x.category||'Other',x.desc,x.amount])];download('spy-transactions.csv',rows.map(r=>r.map(v=>'"'+String(v??'').replaceAll('"','""')+'"').join(',')).join('\n'),'text/csv')};
+function download(name,content,type){let a=document.createElement('a'),url=URL.createObjectURL(new Blob([content],{type}));a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+el('importFile').onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let imported=JSON.parse(await f.text());if(!imported||!Array.isArray(imported.transactions)||!Array.isArray(imported.tasks))throw Error();if(!confirm('Restore this backup and replace the data currently stored in this app?'))return;data={...clone(defaults),...imported,budgets:imported.budgets||{},goals:imported.goals||[]};save();alert('Backup restored successfully.')}catch(err){if(err.message!=='')alert('That file is not a valid SPY Command Centre backup.')}e.target.value=''};
+el('clearData').onclick=()=>{if(confirm('Permanently delete all SPY Command Centre data stored in this browser? Download a backup first.')){data=clone(defaults);localStorage.removeItem(OLD_KEY);save()}};
 render();
 if('serviceWorker' in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 let deferredPrompt;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;el('installBtn').style.display='inline-block'});
-el('installBtn').onclick=async()=>{if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;el('installBtn').style.display='none'}else alert('On Android Chrome, use the browser menu ⋮ and choose Install app or Add to Home screen. On iPhone Safari, use Share → Add to Home Screen.')};
+el('installBtn').onclick=async()=>{if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;el('installBtn').style.display='none'}else alert('On Android Chrome, use the browser menu ⋮ and choose Install app or Add to Home screen.')};
 </script>
 </body></html>

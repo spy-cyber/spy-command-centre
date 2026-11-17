@@ -1,42 +1,28 @@
-# SPY Command Centre 3.0
+# SPY Command Centre 4.0
 
-A mobile-first installable web app (PWA) for personal finance, debt tracking, job applications, tasks and learning goals.
+A mobile-first installable Progressive Web App for personal finance, debt repayment, career applications, daily tasks, savings goals, learning progress and reports.
 
-## What's included
-- Local data persistence in the browser using localStorage
-- Income and expense ledger
-- Debt repayment history
-- Job application pipeline and status updates
-- Daily task checklist
-- Learning goals and progress sliders
-- Financial and career summaries
-- JSON backup/restore and transaction CSV export
-- Offline caching after first successful load
-- Add-to-home-screen support
+## Deploy / upgrade on GitHub Pages
 
-## Important privacy note
-Data stays in the browser profile on the device where it is entered. It is not synced to an online account and is not encrypted by this app. Anyone with access to the unlocked browser profile may be able to view it. Export backups and keep them somewhere private. Do not store passwords, bank credentials or highly sensitive information.
+1. Download and extract this ZIP.
+2. In your existing `spy-command-centre` GitHub repository, choose **Add file → Upload files**.
+3. Upload all five files from this folder and replace the existing files with the same names.
+4. Commit the changes to the `main` branch.
+5. GitHub Pages should automatically rebuild from `main` and `/(root)`.
+6. Open `https://spy-cyber.github.io/spy-command-centre/` in Chrome.
 
-## Install on Android
-1. Publish the contents of this folder to a static HTTPS host (for example, a GitHub Pages site).
-2. Open the published HTTPS address in Chrome on your Android phone.
-3. Open Chrome's three-dot menu and choose **Install app** or **Add to Home screen**.
-4. Confirm. The app will appear on your home screen and open in its own app-style window.
+## Important data migration
 
-## Install on iPhone
-Open the published HTTPS address in Safari → Share → Add to Home Screen.
+Version 4.0 uses the same website origin and reads the existing `spy-command-centre-v3` browser storage key. It migrates existing Version 3 records into the Version 4 storage key without deleting the Version 3 key. Existing records include transactions, debt repayments, applications, tasks, learning goals and salary/debt settings. New fields receive safe defaults.
 
-## Publish with GitHub Pages
-1. Sign in to GitHub and create a new public repository, e.g. `spy-command-centre`.
-2. Upload all files from this folder to the repository root (not the ZIP itself).
-3. In the repository, open Settings → Pages.
-4. Under Build and deployment, select Deploy from a branch, choose `main` and `/ (root)`, then Save.
-5. Wait for GitHub Pages to publish, then open the provided HTTPS address on your phone and install it.
+**Before upgrading:** In Version 3, open Reports / Settings and download a JSON backup if the export option is available in your build. Keep that file safe. The app stores data locally in the browser; it does not sync between devices.
 
-You can also use another static HTTPS hosting service. Do not publish personal backup files or transaction exports in the hosting repository.
+After upload, reopen the installed app while online. If the old screen remains, fully close the app and reopen it, or open the site in Chrome and refresh. The updated service worker uses a new cache version.
 
-## Updating
-Replace the app files on the host with the newer version. Reopen the app while online so the service worker can fetch the update.
+## Privacy and limitations
 
-## Technical notes
-This is a static Progressive Web App. No server or paid backend is included. Data is local to one browser/device. Clearing browser site data may erase app records; export a backup regularly.
+- Data is stored locally in the browser on this device.
+- There is no account login, server, cloud sync or app-level encryption.
+- Do not store passwords, PINs or highly sensitive information.
+- Export backups regularly. Clearing browser/site data can erase local records.
+- This is a personal organiser, not a bank account or financial institution.
